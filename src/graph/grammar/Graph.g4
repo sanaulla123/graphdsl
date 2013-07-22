@@ -1,0 +1,12 @@
+graph: GRAPH_START (edge|vertex)+ GRAPH_END;
+edge: (vertex) TO (vertex) weight;
+vertex: ID;
+weight: '(' NUM ')';
+GRAPH_START : 'Graph'([ ])*'{';
+GRAPH_END : '}';
+WEIGHT_START: '(';
+WEIGHT_END: ')'; 
+TO: '->';
+ID: ^[a-zA-Z][a-zA-Z0-9]*;
+NUM: [0-9]*[.]?[0-9]+;
+WS: [ \t\r\n]+ -> skip;
